@@ -26,12 +26,13 @@ body{
 /* globables */
 .contenedor{
     width: min(90%, 120rem);
-    margin: 0 auto;
+    margin: 2rem auto;
     background-color: var(--gris);
     padding: 2rem 1rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    
 }
 a{
     text-decoration: none;
@@ -51,6 +52,9 @@ h2{
 p{
     font-family: var(--fuenteParrafos);
 }
+.imagenesBlancoNegro{
+    filter: saturate(0%);
+}
 
 /* header */
 .header{
@@ -64,8 +68,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     padding: 2rem 0;
     justify-content: center;
 }
-.header--fondo{
-    background-image: url("../img/logo.png");
+
+.header--fondo{z-index: 1;
+    background-image: url("../img/logoC.png");
     height: 10rem;
     width: 92%;
     margin: 0 auto;
@@ -73,7 +78,12 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     background-size: cover;
     background-position: center center;
 }
-.header--nav{
+@media (min-width: 768px) {
+    .header--fondo{
+        background-image: url("../img/logoC.png");
+    }
+}
+.header--nav{z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -91,6 +101,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     background-color: var(--animacion);
     color: var(--blanco);
     transition: all .6s;
+}.estasAqui{
+    color: var(--blanco);
+    background-color: var(--colorPrimario);
 }
 /* modo tablet */
 @media (min-width: 768px) {
@@ -99,7 +112,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
         background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
         }
         .header--fondo{
-            height: 15rem;
+            height: 20rem;
         }
         .header--nav{
             flex-direction: row;
@@ -226,7 +239,6 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
         width: 70%;
         grid-row: 2 / 3;
         margin: auto;
-        filter: saturate(0%);
     }
     .modificar{
         font-size: 2rem;
@@ -262,4 +274,70 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+@media (min-width: 768px) {
+    .footer--imagen{
+        height: 17rem;
+        background-image: url("../img/bannerL.png");
+    }
+    
+}
+@media (min-width: 1220px) {
+    .footer--imagen{
+        height: 22rem;
+        background-image: url("../img/banerP.png");
+    }
+    
+}
+
+
+/* PAGINA, COSAS QUE NO SABIAS */
+/* header */
+.cambioFondo{
+    background-image: url("../img/logoCambio.png");
+    text-align: center;
+}
+.cambio__logo{
+    opacity: .5;
+    margin-top: -3%;
+    height: 15rem;
+    width: auto;
+}
+.animacion {
+    position: absolute;
+    width: 100%;
+    height: 48rem;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255, 255, 255, .5) 25px, rgba(255, 255, 255, .5) 50px);    
+    background-clip: text;
+    animation: color 50s linear infinite;
+    background-size: 200%;  
+    opacity: .2;  
+    z-index: 0;
+}
+
+@keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+.cambiar--main{
+    text-align: center;
+}
+.cambiar--main img{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .cambio__logo{
+        height: 30rem;
+    }
+}
+@media (min-width: 1220px) {
+    .cambio__logo{
+        height:auto;
+    }
 }
